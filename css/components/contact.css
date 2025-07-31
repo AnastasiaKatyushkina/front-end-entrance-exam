@@ -25,10 +25,10 @@
   font-size: var(--fs-sm);
   color: var(--color-white);
   transition: color 0.3s ease;
-
 }
 
-.contact__email:focus, .resume__contact .section__title:focus {
+.contact__email:focus,
+.resume__contact .section__title:focus {
   padding: 1px 2px;
   background-color: rgba(255, 255, 255, 0.2);
 }

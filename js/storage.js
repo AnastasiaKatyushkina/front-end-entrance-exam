@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 export function initLocalStorageSync() {
   const EDITABLE_CLASS = 'editable-block';
   const STORAGE_KEY = 'resumeEditableData';

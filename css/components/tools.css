@@ -39,7 +39,9 @@
   top: 0;
   z-index: 10;
   transform: translateY(-50%);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .tools__title:focus {

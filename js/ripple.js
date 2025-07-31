@@ -1,10 +1,16 @@
+/* jshint esversion: 6 */
+
 export function initRipples() {
-  document.body.addEventListener('click', function (e) {
+  document.body.addEventListener('click', function(e) {
     const container = e.target.closest('.ripple');
-    if (!container) return;
+    if (!container) {
+      return;
+    }
 
     const editableAncestor = e.target.closest('[contenteditable="true"]');
-    if (editableAncestor && editableAncestor !== container) return;
+    if (editableAncestor && editableAncestor !== container) {
+      return;
+    }
 
     const circle = document.createElement('span');
     circle.classList.add('ripple-effect');

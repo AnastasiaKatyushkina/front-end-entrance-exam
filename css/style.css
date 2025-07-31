@@ -1,16 +1,16 @@
-@import "./base/fonts/font.css";
-@import "./base/variables.css";
-@import "./base/editable-block.css";
-@import "./base/material-wave.css";
+@import './base/fonts/font.css';
+@import './base/variables.css';
+@import './base/editable-block.css';
+@import './base/material-wave.css';
 
-@import "./components/profile.css";
-@import "./components/languages.css";
-@import "./components/experience.css";
-@import "./components/tools.css";
-@import "./components/education.css";
-@import "./components/interests.css";
-@import "./components/contact.css";
-@import "./components/buttons.css";
+@import './components/profile.css';
+@import './components/languages.css';
+@import './components/experience.css';
+@import './components/tools.css';
+@import './components/education.css';
+@import './components/interests.css';
+@import './components/contact.css';
+@import './components/buttons.css';
 
 *,
 *::before,
@@ -90,7 +90,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .resume__row { flex-direction: column; }
+  .resume__row {
+    flex-direction: column;
+  }
   .resume__profile,
   .resume__languages,
   .resume__experience,
@@ -102,4 +104,3 @@ body {
     max-width: none;
   }
 }
-
