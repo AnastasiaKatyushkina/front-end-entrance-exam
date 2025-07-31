@@ -1,24 +1,34 @@
-import '../css/style.css'
-import javascriptLogo from '../javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { initRipples } from "./ripple.js";
+import { initDownload } from "./download.js";
+import { initLocalStorageSync } from './storage.js';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+function initLanguageProgressBars() {
+  document.querySelectorAll('.language__progress').forEach((el, index) => {
+    const defaultLevel = el.getAttribute('data-level') || 100;
+    const level = index === 2 ? 80 : defaultLevel;
+    el.setAttribute('data-level', level);
+    el.style.width = `${level}%`;
 
-setupCounter(document.querySelector('#counter'))
+    const input = el.parentElement.querySelector('.language__range');
+    if (input) input.value = level;
+  });
+
+  document.querySelectorAll('.language__range').forEach(input => {
+    input.addEventListener('input', () => {
+      const progress = input.parentElement.querySelector('.language__progress');
+      const val = input.value;
+      progress.setAttribute('data-level', val);
+      progress.style.width = `${val}%`;
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initLanguageProgressBars(); 
+
+  window.requestIdleCallback(() => {
+    initLocalStorageSync(); 
+    initRipples();       
+    initDownload();        
+  });
+});

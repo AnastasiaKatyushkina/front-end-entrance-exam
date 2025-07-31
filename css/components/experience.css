@@ -1,0 +1,127 @@
+.resume__experience {
+  max-width: 411px;
+  width: 100%;
+  background-color: var(--color-grey-light);
+  border-radius: var(--radius-md);
+  padding: var(--padding-md);
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.resume__experience .section__title {
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.experience__card {
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  background-color: var(--color-white);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.experience__card:first-of-type {
+  background-color: var(--color-primary);
+}
+
+.experience__card:first-of-type *,
+.experience__card:first-of-type .experience__details-item::before {
+  color: var(--color-white);
+}
+
+.experience__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: var(--line-height-base);
+}
+
+.experience__date {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-xs);
+  transition: color 0.3s ease;
+}
+
+.experience__label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  border-radius: var(--radius-pill);
+  padding: 2px 6px;
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.experience__label:focus {
+  padding: 2px 8px;
+  background-color: rgba(126, 115, 18, 1);
+}
+
+.experience__content {
+  display: flex;
+  gap: var(--gap-md);
+}
+
+.experience__info {
+  flex: 0 0 33%;
+  min-width: 124px;
+}
+
+.experience__position {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  margin-bottom: -2px;
+  transition: color 0.3s ease;
+}
+
+.experience__company {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  transition: color 0.3s ease;
+}
+
+.experience__details {
+  list-style: none;
+  flex: 1;
+}
+
+.experience__details-item {
+  position: relative;
+  padding-left: 10px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  line-height: var(--line-height-base);
+  transition: color 0.3s ease;
+}
+
+.experience__details-item::before {
+  content: "•";
+  position: absolute;
+  left: 1px;
+}
+
+.experience__details-item:focus {
+  padding: 4px 12px;
+  background-color: rgba(20, 144, 99, 0.2);
+}
+
+
+@media (max-width: 768px) {
+  .resume__experience {
+    flex: 1 1 100%;
+  }
+
+  .experience__content {
+    flex-direction: column;
+  }
+
+  .experience__info,
+  .experience__details {
+    width: 100%;
+  }
+}

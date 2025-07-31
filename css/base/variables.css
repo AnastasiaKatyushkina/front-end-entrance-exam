@@ -1,0 +1,42 @@
+:root {
+  --font-main: "Poppins", sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --fs-xxs: 5px;
+  --fs-xs: 8px;
+  --fs-sm: 10px;
+  --fs-md: 12px;
+  --fs-lg: 14px;
+
+  --gap-xs: 8px;
+  --gap-sm: 10px;
+  --gap-md: 12px;
+  --gap-xl: 16px;
+  --gap-main: 20px;
+
+  --padding-xs: 6px;
+  --padding-sm: 8px;
+  --padding-md: 12px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-pill: 59px;
+
+  --line-height-base: 1.5;
+  --line-height-tight: 1.04;
+  --line-height-compact: 1.42;
+
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-grey-light: rgba(240, 240, 240, 1);
+  --color-grey-dark: rgba(92, 92, 92, 1);
+  --color-primary: rgba(40, 217, 121, 1);
+  --color-green-dark: rgba(20, 144, 99, 1);
+  --color-badge-bg: rgba(126, 115, 18, 0.4);
+  --color-badge-text: rgba(221, 241, 99, 1);
+
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 4px 20px rgba(0, 0, 0, 0.1);
+}

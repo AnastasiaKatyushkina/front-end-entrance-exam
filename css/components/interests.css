@@ -1,0 +1,35 @@
+.resume__interests {
+  max-width: 267px;
+  width: 100%;
+  background-color: var(--color-grey-light);
+  border-radius: var(--radius-md);
+  padding: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  transition: background-color 0.3s ease;
+}
+
+.interests__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+}
+
+.interests__item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.interests__item:focus {
+  padding: 4px 12px;
+  background-color: rgba(20, 144, 99, 0.2);
+}

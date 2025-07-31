@@ -1,0 +1,105 @@
+.resume__education {
+  max-width: 268px;
+  width: 100%;
+  background-color: var(--color-grey-light);
+  border-radius: var(--radius-md);
+  padding: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-xl);
+}
+
+.education__header {
+  flex-shrink: 0;
+}
+
+.resume__education .section__title {
+  transition: color 0.3s ease;
+}
+
+.education__container_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--gap-xl);
+  row-gap: var(--gap-md);
+}
+
+.education__card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--padding-sm);
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: var(--gap-xs);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.education__card.liked {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.education__card.liked time,
+.education__card.liked .education__course,
+.education__card.liked .education__source,
+.education__card.liked .education__tags {
+  color: var(--color-white);
+}
+
+.education__meta time {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: color 0.3s ease;
+}
+
+.education__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.education__year {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.education__course {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  line-height: var(--line-height-base);
+  margin-bottom: -2px;
+  transition: color 0.3s ease;
+}
+
+.education__tags,
+.education__source {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  line-height: var(--line-height-base);
+  transition: color 0.3s ease;
+}
+
+.education__tags {
+  color: var(--color-green-dark);
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 11px;
+}
+
+.like-button__icon {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .education__container_cards {
+    grid-template-columns: 1fr;
+  }
+}

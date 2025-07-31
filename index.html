@@ -1,13 +1,624 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>CV Resume</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="img/profileimg.jpg"
+      fetchpriority="high"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
+    <header class="header">
+      <h1 class="header__title">Шаблон резюме</h1>
+      <button
+        class="download-btn ripple"
+        type="button"
+        aria-label="Скачать резюме в PDF"
+      >
+        Скачать PDF
+      </button>
+    </header>
+
+    <main class="resume" id="resume">
+      <div class="resume__row">
+        <section class="resume__profile">
+          <div class="profile__photo-container">
+            <img
+              src="img/profileimg.jpg"
+              alt="Profile photo"
+              class="profile__photo"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="profile__info">
+            <p
+              class="profile__greeting editable-block ripple"
+              contenteditable="true"
+            >
+              Hello 👋🏻 I’m
+            </p>
+            <div class="profile__identity">
+              <h2
+                class="profile__name editable-block ripple"
+                contenteditable="true"
+              >
+                Karthik SR
+              </h2>
+              <h3
+                class="profile__role editable-block ripple"
+                contenteditable="true"
+              >
+                UX/UI Designer
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        <aside class="resume__languages">
+          <h2
+            class="section__title editable-block ripple"
+            contenteditable="true"
+          >
+            Languages
+          </h2>
+          <ul class="languages__list">
+            <li class="language__item">
+              <p
+                class="language__label editable-block ripple"
+                contenteditable="true"
+              >
+                English
+              </p>
+              <div class="language__progress__bar ripple">
+                <div class="language__progress" data-level="100"></div>
+                <input
+                  type="range"
+                  class="language__range"
+                  min="0"
+                  max="100"
+                  value="100"
+                />
+              </div>
+            </li>
+            <li class="language__item">
+              <p
+                class="language__label editable-block ripple"
+                contenteditable="true"
+              >
+                Malayalam
+              </p>
+              <div class="language__progress__bar ripple">
+                <div class="language__progress" data-level="100"></div>
+                <input
+                  type="range"
+                  class="language__range"
+                  min="0"
+                  max="100"
+                  value="100"
+                />
+              </div>
+            </li>
+            <li class="language__item">
+              <p
+                class="language__label editable-block ripple"
+                contenteditable="true"
+              >
+                Hindi
+              </p>
+              <div class="language__progress__bar ripple">
+                <div class="language__progress" data-level="100"></div>
+                <input
+                  type="range"
+                  class="language__range"
+                  min="0"
+                  max="100"
+                  value="80"
+                />
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="resume__row">
+        <section class="resume__experience">
+          <h2
+            class="section__title editable-block ripple"
+            contenteditable="true"
+          >
+            Experience
+          </h2>
+          <article class="experience__card">
+            <div class="experience__meta">
+              <p
+                class="experience__date editable-block ripple"
+                contenteditable="true"
+              >
+                Jun. 2023 – Present
+              </p>
+              <span
+                class="experience__label editable-block ripple"
+                contenteditable="true"
+                >most recent</span
+              >
+            </div>
+            <div class="experience__content">
+              <div class="experience__info">
+                <h3
+                  class="experience__position editable-block ripple"
+                  contenteditable="true"
+                >
+                  Marketing Manager
+                </h3>
+                <p
+                  class="experience__company editable-block ripple"
+                  contenteditable="true"
+                >
+                  Pankayam &nbsp;&nbsp;|&nbsp;&nbsp; Full-time
+                </p>
+              </div>
+              <ul class="experience__details">
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Strategy development and planning of campaigns that promote
+                  the business and generate genuine traffic
+                </li>
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  SEO Content Creation for Blogs, Website, Social media
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience__card">
+            <div class="experience__meta">
+              <p
+                class="experience__date editable-block ripple"
+                contenteditable="true"
+              >
+                2017 – Present
+              </p>
+            </div>
+            <div class="experience__content">
+              <div class="experience__info">
+                <h3
+                  class="experience__position editable-block ripple"
+                  contenteditable="true"
+                >
+                  Graphic / Web designer
+                </h3>
+                <p
+                  class="experience__company editable-block ripple"
+                  contenteditable="true"
+                >
+                  Freelance
+                </p>
+              </div>
+              <ul class="experience__details">
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Development of internal projects from scratch, product design
+                  of brands
+                </li>
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Landing page, webapps and hybrid apps
+                </li>
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Coordinating with outside agencies, art services, web
+                  designer, marketing, printers, and colleagues as necessary
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience__card">
+            <div class="experience__meta">
+              <p
+                class="experience__date editable-block ripple"
+                contenteditable="true"
+              >
+                Sep. 2021 – Jun. 2023
+              </p>
+            </div>
+            <div class="experience__content">
+              <div class="experience__info">
+                <h3
+                  class="experience__position editable-block ripple"
+                  contenteditable="true"
+                >
+                  Legal Assistant
+                </h3>
+                <p
+                  class="experience__company editable-block ripple"
+                  contenteditable="true"
+                >
+                  Law Firm &nbsp;&nbsp;|&nbsp;&nbsp; Intern
+                </p>
+              </div>
+              <ul class="experience__details">
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Provide administrative support to lawyer and enhance office
+                  effectiveness
+                </li>
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Handle communication with clients, witnesses etc
+                </li>
+                <li
+                  class="experience__details-item editable-block ripple"
+                  contenteditable="true"
+                >
+                  Reparse case briefs and summarize depositions, interrogatories
+                  and testimony
+                </li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <section class="resume__tools">
+          <h2
+            class="section__title editable-block ripple"
+            contenteditable="true"
+          >
+            Tools
+          </h2>
+          <div class="tools__container">
+            <article class="tools__group">
+              <h3
+                class="tools__title editable-block ripple"
+                contenteditable="true"
+              >
+                design
+              </h3>
+              <ul class="tools__icons">
+                <li class="tools__icon-item">
+                  <img
+                    src="img/figma.svg"
+                    alt="Figma logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/photoshop.svg"
+                    alt="Photoshop logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/illustrator.svg"
+                    alt="Illustrator logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/premiere.svg"
+                    alt="Premiere logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoNotion.svg"
+                    alt="Notion logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoMeet.svg"
+                    alt="Google Meet logo"
+                    loading="lazy"
+                  />
+                </li>
+              </ul>
+            </article>
+
+            <article class="tools__group">
+              <h3
+                class="tools__title editable-block ripple"
+                contenteditable="true"
+              >
+                no-code
+              </h3>
+              <ul class="tools__icons">
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoZapier.svg"
+                    alt="Zapier logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoWebflow.svg"
+                    alt="Webflow logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoFramer.svg"
+                    alt="Framer logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoWordpress.svg"
+                    alt="Wordpress logo"
+                    loading="lazy"
+                  />
+                </li>
+              </ul>
+            </article>
+
+            <article class="tools__group">
+              <h3
+                class="tools__title editable-block ripple"
+                contenteditable="true"
+              >
+                artificial Intelligence
+              </h3>
+              <ul class="tools__icons">
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoChatGPT.svg"
+                    alt="ChatGPT logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoCopilot.svg"
+                    alt="Copilot logo"
+                    loading="lazy"
+                  />
+                </li>
+                <li class="tools__icon-item">
+                  <img
+                    src="img/logoMidjourney.svg"
+                    alt="Midjourney logo"
+                    loading="lazy"
+                  />
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <div class="resume__row">
+        <section class="resume__education">
+          <div class="education__header">
+            <h2
+              class="section__title editable-block ripple"
+              contenteditable="true"
+            >
+              Education
+            </h2>
+          </div>
+          <div class="education__container_cards">
+            <article class="education__card liked">
+              <div class="education__meta">
+                <p
+                  class="education__year editable-block ripple"
+                  contenteditable="true"
+                >
+                  2023
+                </p>
+                <button class="like-button" aria-label="Like this course">
+                  <img
+                    src="img/vector.svg"
+                    alt="Heart icon for like"
+                    class="like-button__icon"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+              <div class="education__container">
+                <h3
+                  class="education__course editable-block ripple"
+                  contenteditable="true"
+                >
+                  UI/UX
+                </h3>
+                <p
+                  class="education__tags editable-block ripple"
+                  contenteditable="true"
+                >
+                  #UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux
+                </p>
+              </div>
+              <p
+                class="education__source editable-block"
+                contenteditable="true"
+              >
+                Coursera
+              </p>
+            </article>
+
+            <article class="education__card">
+              <div class="education__meta">
+                <p
+                  class="education__year editable-block ripple"
+                  contenteditable="true"
+                >
+                  2017 – 2022
+                </p>
+              </div>
+              <div class="education__container">
+                <h3
+                  class="education__course editable-block ripple"
+                  contenteditable="true"
+                >
+                  Law
+                </h3>
+                <p
+                  class="education__tags editable-block ripple"
+                  contenteditable="true"
+                >
+                  #law #legalStudies #contracts #internationalLaws
+                </p>
+              </div>
+              <p
+                class="education__source editable-block ripple"
+                contenteditable="true"
+              >
+                University of Kerala
+              </p>
+            </article>
+
+            <article class="education__card">
+              <div class="education__meta">
+                <p
+                  class="education__year editable-block ripple"
+                  contenteditable="true"
+                >
+                  2017
+                </p>
+              </div>
+              <div class="education__container">
+                <h3
+                  class="education__course editable-block ripple"
+                  contenteditable="true"
+                >
+                  Graphic Design
+                </h3>
+                <p
+                  class="education__tags editable-block ripple"
+                  contenteditable="true"
+                >
+                  #branding #web #illustration #adobe
+                </p>
+              </div>
+              <p
+                class="education__source editable-block ripple"
+                contenteditable="true"
+              >
+                Coursera
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <div class="resume__side-column">
+          <aside class="resume__interests">
+            <h2
+              class="section__title editable-block ripple"
+              contenteditable="true"
+            >
+              Interests
+            </h2>
+            <ul class="interests__list">
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                branding
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                design
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                photography
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                artificial intelligence
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                illustration
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                typography
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                social networks
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                research
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                dron pilot
+              </li>
+              <li
+                class="interests__item editable-block ripple"
+                contenteditable="true"
+              >
+                games
+              </li>
+            </ul>
+          </aside>
+
+          <section class="resume__contact">
+            <h2
+              class="section__title editable-block ripple"
+              contenteditable="true"
+            >
+              Let´s chat! I´m ready to work on excinting projects
+            </h2>
+            <p
+              class="contact__email editable-block ripple"
+              contenteditable="true"
+            >
+              srkarthik.designscape@gmail.com
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

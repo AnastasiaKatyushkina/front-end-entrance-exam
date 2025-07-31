@@ -1,0 +1,22 @@
+.ripple {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(20, 144, 99, 0.2) !important;
+  transform: scale(0);
+  animation: ripple-effect-animation 600ms linear;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes ripple-effect-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
